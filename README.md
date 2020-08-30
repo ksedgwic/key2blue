@@ -1,4 +1,5 @@
-# key2blue
+# Key2Blue
+
 Morse code key to bluetooth gateway
 
 ## Install esp-idf
@@ -8,10 +9,10 @@ Follow [installation directions for esp-idf](https://docs.espressif.com/projects
 - Remove the noted lines to create a toolchain with support for 64-bit
   time_t.
   
-- I chose esp-idf "v4.1".
+- I chose esp-idf tag "v4.1". (`git checkout v4.1`)
 
 Might be good to run the "hello_world" example in the installation doc
-to make sure you are functionall.
+to make sure you are functional.
 
 ## Install btstack
 
