@@ -464,6 +464,7 @@ void sco_demo_close(void){
 
 void sco_demo_set_codec(uint8_t codec){
     if (negotiated_codec == codec) return;
+    log_info("sco_demo_set_codec %d", codec);
     negotiated_codec = codec;
 
 #if (SCO_DEMO_MODE == SCO_DEMO_MODE_SINE) || (SCO_DEMO_MODE == SCO_DEMO_MODE_MICROPHONE)
@@ -478,6 +479,8 @@ void sco_demo_set_codec(uint8_t codec){
 }
 
 void sco_demo_init(void){
+    log_info("sco_demo_init starting\n");
+
 	// status
 #if SCO_DEMO_MODE == SCO_DEMO_MODE_MICROPHONE
     printf("SCO Demo: Sending and receiving audio via btstack_audio.\n");
@@ -509,6 +512,8 @@ void sco_report(void){
 }
 
 void sco_demo_send(hci_con_handle_t sco_handle){
+
+    log_info("sco_demo_send starting\n");
 
     if (sco_handle == HCI_CON_HANDLE_INVALID) return;
     
@@ -703,7 +708,7 @@ void sco_demo_receive(uint8_t * packet, uint16_t size){
     data_received += size - 3;
     packets++;
     if (data_received > 100000){
-        printf("Summary: data %07u, packets %04u, packet with crc errors %0u, byte errors %04u\n",  (unsigned int) data_received,  (unsigned int) packets, (unsigned int) crc_errors, (unsigned int) byte_errors);
+        log_info("Summary: data %07u, packets %04u, packet with crc errors %0u, byte errors %04u",  (unsigned int) data_received,  (unsigned int) packets, (unsigned int) crc_errors, (unsigned int) byte_errors);
         crc_errors = 0;
         byte_errors = 0;
         data_received = 0;

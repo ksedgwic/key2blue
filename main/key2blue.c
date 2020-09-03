@@ -254,10 +254,10 @@ int btstack_main(int argc, const char * argv[]){
     btstack_stdin_setup(stdin_process);
 #endif
 
-    gap_set_local_name("key2blue 00:00:00:00:00:00");
+    gap_set_local_name("Key2Blue");
     gap_discoverable_control(1);
     gap_ssp_set_io_capability(SSP_IO_CAPABILITY_DISPLAY_YES_NO);
-    gap_set_class_of_device(0x240404);
+    gap_set_class_of_device(0x2C0404);
 
     // Parse human readable Bluetooth address.
     sscanf_bd_addr(device_addr_string, device_addr);

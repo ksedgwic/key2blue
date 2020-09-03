@@ -51,6 +51,30 @@ Monitor:
 
     make monitor
 
+Debugging coredumps:
+
+Put the base64 encoded coredump (w/o the text header/footer) in a
+file named `CORE`:
+
+    cat > CORE
+
+Print stack traces:
+
+    espcoredump.py info_corefile \
+      --core CORE --core-format b64 \
+      build/key2blue.elf
+
+Use GDB:
+
+    espcoredump.py dbg_corefile \
+      --core CORE --core-format b64 \
+      build/key2blue.elf
+
+## Related Issues
+
+* [hsp_hs_demo: not receiving HCI_EVENT_SCO_CAN_SEND_NOW?](https://groups.google.com/u/1/g/btstack-dev/c/HIE4FOeEkZc)
+
+* [Trouble Sending SCO Audio](https://github.com/espressif/esp-idf/issues/1118)
 
 ## Other Resources
 
