@@ -70,6 +70,10 @@ Use GDB:
       --core CORE --core-format b64 \
       build/key2blue.elf
 
+See Also:
+
+[Launching GDB with GDBStub](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-monitor.html#launching-gdb-with-gdbstub)
+
 ## Related Issues
 
 * [hsp_hs_demo: not receiving HCI_EVENT_SCO_CAN_SEND_NOW?](https://groups.google.com/u/1/g/btstack-dev/c/HIE4FOeEkZc)
